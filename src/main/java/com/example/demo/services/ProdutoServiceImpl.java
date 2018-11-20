@@ -1,5 +1,7 @@
 package com.example.demo.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,18 @@ public class ProdutoServiceImpl implements ProdutoService {
 	public Produto save(Produto produto) {
 		return this.produtoRepository.save(produto);
 	}
+	
+	@Override
+	public Produto findById(Long id) {
+		
+		return this.produtoRepository.findById(id).get();
+	}
+
+	@Override
+	public List<Produto> findProdutosWithPartOfName(String descricao) {
+		return this.produtoRepository.findProdutosWithPartOfName(descricao);
+	}
+
 }
  
 

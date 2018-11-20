@@ -3,7 +3,6 @@ package com.example.demo.apis.v1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
-import org.springframework.jms.core.JmsTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,12 +14,12 @@ import com.example.demo.domain.orm.Produto;
 import com.example.demo.services.ProdutoServiceImpl;
 
 @RestController
-@RequestMapping(value="/produtos")
+@RequestMapping(value="/produtos/API/")
 public class ProdutoApiRestController {
 	
 	
-	@Autowired 
-	private JmsTemplate jmsTemplate;
+//	@Autowired 
+//	private JmsTemplate jmsTemplate;
 
 	@Autowired @Qualifier("produtoServiceImpl")
 	private ProdutoServiceImpl produtoService;
